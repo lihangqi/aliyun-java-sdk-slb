@@ -1,4 +1,6 @@
 # aliyun-java-sdk-slb
+[![Build Status](https://dev.azure.com/lingyuntech/aliyun-java-sdk-slb/_apis/build/status/lihangqi.aliyun-java-sdk-slb?branchName=master)](https://dev.azure.com/lingyuntech/aliyun-java-sdk-slb/_build/latest?definitionId=7&branchName=master)
+
 阿里云负载均衡SDK
 
 欢迎使用阿里云开发者工具套件（Alibaba Cloud SDK for Java）。Alibaba Cloud SDK for Java让您不用复杂编程即可访问云服务器、云数据库RDS、云监控等多个阿里云服务。本教程介绍如何安装并开始使用Alibaba Cloud SDK for Java。
