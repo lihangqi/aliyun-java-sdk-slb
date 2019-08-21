@@ -1,6 +1,5 @@
 <h1 align="center"> Aliyun SLB SDK for Java </h1>
 
-[![Build Status](https://dev.azure.com/lingyuntech/aliyun-java-sdk-slb/_apis/build/status/lihangqi.aliyun-java-sdk-slb?branchName=master)](https://dev.azure.com/lingyuntech/aliyun-java-sdk-slb/_build/latest?definitionId=7&branchName=master)
 [![Build Status](https://travis-ci.com/lihangqi/aliyun-java-sdk-slb.svg?branch=master)](https://travis-ci.com/lihangqi/aliyun-java-sdk-slb)
 [![codecov](https://codecov.io/gh/lihangqi/aliyun-java-sdk-slb/branch/master/graph/badge.svg)](https://codecov.io/gh/lihangqi/aliyun-java-sdk-slb)
 
