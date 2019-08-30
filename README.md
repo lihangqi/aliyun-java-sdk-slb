@@ -1,5 +1,6 @@
 <h1 align="center"> Aliyun SLB SDK for Java </h1>
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cdb90dde323f42adaa06b90bec073907)](https://www.codacy.com/app/weslie0803/aliyun-java-sdk-slb?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lihangqi/aliyun-java-sdk-slb&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.com/lihangqi/aliyun-java-sdk-slb.svg?branch=master)](https://travis-ci.com/lihangqi/aliyun-java-sdk-slb)
 [![codecov](https://codecov.io/gh/lihangqi/aliyun-java-sdk-slb/branch/master/graph/badge.svg)](https://codecov.io/gh/lihangqi/aliyun-java-sdk-slb)
 
