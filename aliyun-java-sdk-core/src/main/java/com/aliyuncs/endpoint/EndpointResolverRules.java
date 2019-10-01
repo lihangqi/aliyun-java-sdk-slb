@@ -1,6 +1,5 @@
 package com.aliyuncs.endpoint;
 
-import java.util.Iterator;
 import java.util.HashMap;
 
 public class EndpointResolverRules extends EndpointResolverBase {
@@ -37,25 +36,21 @@ public class EndpointResolverRules extends EndpointResolverBase {
             if ("".equals(this.productNetwork) || this.productNetwork == null) {
                 this.productNetwork = "public";
             }
-            
+
             if ("public".equals(this.productNetwork)) {
-                Iterator<HashMap.Entry<String, String>> entries = this.productEndpointMap.entrySet().iterator();
-                while (entries.hasNext()) {
-                    HashMap.Entry<String, String> entry = entries.next();
-                    if (entry.getKey() == regionId) {
-                        return entry.getValue();
-                    }
+                if (this.productEndpointMap.containsKey(regionId)) {
+                    return this.productEndpointMap.get(regionId);
                 }
             }
 
             String endpoint = "";
-            if (this.productEndpointRegional.equals("regional")) {
+            if ("regional".equals(this.productEndpointRegional)) {
                 endpoint = "<product_id><suffix><network>.<region_id>.aliyuncs.com";
                 endpoint = endpoint.replace("<region_id>", regionId.toLowerCase());
             } else {
                 endpoint = "<product_id><suffix><network>.aliyuncs.com";
             }
-            if (this.productSuffix == null || this.productSuffix.equals("")) {
+            if (this.productSuffix == null || "".equals(this.productSuffix)) {
                 endpoint = endpoint.replace("<suffix>", "");
             } else {
                 endpoint = endpoint.replace("<suffix>", "-" + this.productSuffix.toLowerCase());
