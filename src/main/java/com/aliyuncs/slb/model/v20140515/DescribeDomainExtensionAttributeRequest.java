@@ -22,24 +22,20 @@ import com.aliyuncs.slb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDomainExtensionsRequest extends RpcAcsRequest<DescribeDomainExtensionsResponse> {
+public class DescribeDomainExtensionAttributeRequest extends RpcAcsRequest<DescribeDomainExtensionAttributeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String domainExtensionId;
 
-	private Integer listenerPort;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String loadBalancerId;
-	public DescribeDomainExtensionsRequest() {
-		super("Slb", "2014-05-15", "DescribeDomainExtensions", "slb");
+	public DescribeDomainExtensionAttributeRequest() {
+		super("Slb", "2014-05-15", "DescribeDomainExtensionAttribute", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,17 +62,6 @@ public class DescribeDomainExtensionsRequest extends RpcAcsRequest<DescribeDomai
 		this.domainExtensionId = domainExtensionId;
 		if(domainExtensionId != null){
 			putQueryParameter("DomainExtensionId", domainExtensionId);
-		}
-	}
-
-	public Integer getListenerPort() {
-		return this.listenerPort;
-	}
-
-	public void setListenerPort(Integer listenerPort) {
-		this.listenerPort = listenerPort;
-		if(listenerPort != null){
-			putQueryParameter("ListenerPort", listenerPort.toString());
 		}
 	}
 
@@ -113,20 +98,9 @@ public class DescribeDomainExtensionsRequest extends RpcAcsRequest<DescribeDomai
 		}
 	}
 
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
-	}
-
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
-		}
-	}
-
 	@Override
-	public Class<DescribeDomainExtensionsResponse> getResponseClass() {
-		return DescribeDomainExtensionsResponse.class;
+	public Class<DescribeDomainExtensionAttributeResponse> getResponseClass() {
+		return DescribeDomainExtensionAttributeResponse.class;
 	}
 
 }
