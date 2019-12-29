@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
@@ -22,12 +23,14 @@ import com.aliyuncs.slb.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExtensionResponse> {
+public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Integer listenerPort;
+	private Boolean all;
+
+	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
 
@@ -35,13 +38,11 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 
 	private Long ownerId;
 
-	private String serverCertificateId;
+	private String resourceType;
 
-	private String loadBalancerId;
-
-	private String domain;
-	public CreateDomainExtensionRequest() {
-		super("Slb", "2014-05-15", "CreateDomainExtension", "slb");
+	private List<String> tagKeys;
+	public UntagResourcesRequest() {
+		super("Slb", "2014-05-15", "UntagResources", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,15 +61,28 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 		}
 	}
 
-	public Integer getListenerPort() {
-		return this.listenerPort;
+	public Boolean getAll() {
+		return this.all;
 	}
 
-	public void setListenerPort(Integer listenerPort) {
-		this.listenerPort = listenerPort;
-		if(listenerPort != null){
-			putQueryParameter("ListenerPort", listenerPort.toString());
+	public void setAll(Boolean all) {
+		this.all = all;
+		if(all != null){
+			putQueryParameter("All", all.toString());
 		}
+	}
+
+	public List<String> getResourceIds() {
+		return this.resourceIds;
+	}
+
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -104,42 +118,33 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 		}
 	}
 
-	public String getServerCertificateId() {
-		return this.serverCertificateId;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setServerCertificateId(String serverCertificateId) {
-		this.serverCertificateId = serverCertificateId;
-		if(serverCertificateId != null){
-			putQueryParameter("ServerCertificateId", serverCertificateId);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
+	public List<String> getTagKeys() {
+		return this.tagKeys;
 	}
 
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
-		}
-	}
-
-	public String getDomain() {
-		return this.domain;
-	}
-
-	public void setDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
-		}
+	public void setTagKeys(List<String> tagKeys) {
+		this.tagKeys = tagKeys;	
+		if (tagKeys != null) {
+			for (int i = 0; i < tagKeys.size(); i++) {
+				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
+			}
+		}	
 	}
 
 	@Override
-	public Class<CreateDomainExtensionResponse> getResponseClass() {
-		return CreateDomainExtensionResponse.class;
+	public Class<UntagResourcesResponse> getResponseClass() {
+		return UntagResourcesResponse.class;
 	}
 
 }

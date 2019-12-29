@@ -1,4 +1,10 @@
+2019-11-27 Version: 3.2.16
+- Add Tag API.
+
 2019-10-12 Version: 3.2.15
+- Add response paramete for DescribeDomainExtensionAttribute.
+
+2019-10-11 Version: 3.2.15
 - Add response paramete for DescribeDomainExtensionAttribute.
 
 2019-10-11 Version: 3.2.15
